@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy7n70fq837tg"]
+
+[ext_resource type="PackedScene" uid="uid://b8v551m0ru5y7" path="res://scenes/trap/object_tamplete.tscn" id="1_l47k1"]
+[ext_resource type="Texture2D" uid="uid://ceepgmrw2qbuh" path="res://assets/Traps/Spikes/Idle.png" id="2_0onwx"]
+[ext_resource type="Script" path="res://scripts/trap/trap.gd" id="2_p4pry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8qos"]
+size = Vector2(15, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plod1"]
+size = Vector2(13, 6)
+
+[node name="trap" instance=ExtResource("1_l47k1")]
+script = ExtResource("2_p4pry")
+damage = 5
+
+[node name="Collision" type="CollisionShape2D" parent="DetectionArea" index="0"]
+position = Vector2(-0.5, 4.5)
+shape = SubResource("RectangleShape2D_x8qos")
+
+[node name="Texture" parent="." index="1"]
+texture = ExtResource("2_0onwx")
+
+[node name="Collision" parent="." index="2"]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_plod1")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="DetectionArea" to="." method="on_detection_area_body_entered"]
