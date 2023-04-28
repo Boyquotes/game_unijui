@@ -368,4 +368,8 @@ libraries = {
 "": SubResource("AnimationLibrary_rk31j")
 }
 
+[node name="Ray_Jump" type="RayCast2D" parent="."]
+position = Vector2(0, 1)
+target_position = Vector2(0, 20)
+
 [connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]

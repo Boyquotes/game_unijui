@@ -28,6 +28,12 @@ func _physics_process(delta) -> void:
 	var _move := move_and_slide()
 	jump()
 	sprite.animate(velocity)
+	
+	if $Ray_Jump.is_colliding():
+		var obj = $Ray_Jump.get_collider()
+		if obj.is_in_group("enemy"):
+			obj.damege()
+			velocity.y = jump_speed
 
 func knockback_move():
 	velocity = knockback_direction * move_speed * 2
