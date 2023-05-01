@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Villainess Sorrow"
-run/main_scene="res://scenes/management/game_level.tscn"
+run/main_scene="res://scenes/management/level_0.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
