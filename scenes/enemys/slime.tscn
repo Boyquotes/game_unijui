@@ -1,14 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3leiijt46i16"]
+[gd_scene load_steps=10 format=3 uid="uid://c3leiijt46i16"]
 
 [ext_resource type="Texture2D" uid="uid://bjt8ej8cdypby" path="res://assets/Slime/slime_death_01.png" id="1_t6l8y"]
 [ext_resource type="Script" path="res://scripts/enemy/slime.gd" id="1_u4rla"]
 [ext_resource type="Texture2D" uid="uid://dnlohvhpr65p3" path="res://assets/Slime/slime_death_02.png" id="2_1v21s"]
-[ext_resource type="Texture2D" uid="uid://duqqsjsmaoj0r" path="res://assets/Slime/slime_stand_01.png" id="3_78jlx"]
-[ext_resource type="Texture2D" uid="uid://dmnk6680rvcbb" path="res://assets/Slime/slime_stand_02.png" id="4_6o1nq"]
-[ext_resource type="Texture2D" uid="uid://bpllulsbq2cev" path="res://assets/Slime/slime_stand_03.png" id="5_x0sce"]
+[ext_resource type="Texture2D" uid="uid://bglkibf27hctp" path="res://images/slimetest1.png" id="4_wahps"]
+[ext_resource type="Texture2D" uid="uid://bcr3wpt4xk8vl" path="res://images/slimetest2.png" id="5_epbqj"]
+[ext_resource type="Texture2D" uid="uid://xuocfh05u57m" path="res://images/slimetest3.png" id="6_q5m30"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iuqu1"]
-radius = 160.0
+radius = 120.14
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lw3mp"]
 animations = [{
@@ -25,37 +25,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_78jlx")
+"texture": ExtResource("4_wahps")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_6o1nq")
+"texture": ExtResource("5_epbqj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_x0sce")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_78jlx")
+"texture": ExtResource("6_q5m30")
 }],
 "loop": true,
 "name": &"stand",
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hk624"]
+radius = 30.0
+
 [node name="Slime" type="CharacterBody2D" groups=["slime"]]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_u4rla")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -36)
+position = Vector2(0, -28)
 scale = Vector2(0.25, 0.25)
 shape = SubResource("CircleShape2D_iuqu1")
 
 [node name="Animated" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -36)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-4, -36)
+scale = Vector2(1.45833, 1.42444)
 sprite_frames = SubResource("SpriteFrames_lw3mp")
 animation = &"stand"
 autoplay = "stand"
+metadata/_edit_lock_ = true
 
 [node name="Ray_Right" type="RayCast2D" parent="."]
 position = Vector2(0, -32)
@@ -72,3 +73,9 @@ target_position = Vector2(0, 40)
 [node name="Ray_Down_Left" type="RayCast2D" parent="."]
 position = Vector2(-35, -33)
 target_position = Vector2(0, 40)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_hk624")
