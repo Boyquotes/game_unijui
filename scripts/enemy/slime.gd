@@ -15,15 +15,15 @@ func _physics_process(delta) -> void:
 		if timmer_out <= 0:
 			queue_free()
 		
-		if state == "active":
-			if $Ray_Right.is_colliding():
-				direction = -1 
-			if $Ray_Left.is_colliding():
-				direction = 1
-			if $Ray_Down_Right.is_colliding() == false and $Ray_Down_Left.is_colliding() == true:
-				direction = -1
-			if $Ray_Down_Right.is_colliding() == true and $Ray_Down_Left.is_colliding() == false:
-				direction = 1
+	if state == "active":
+		if $Ray_Right.is_colliding():
+			direction = -1 
+		if $Ray_Left.is_colliding():
+			direction = 1
+		if $Ray_Down_Right.is_colliding() == false and $Ray_Down_Left.is_colliding() == true:
+			direction = -1
+		if $Ray_Down_Right.is_colliding() == true and $Ray_Down_Left.is_colliding() == false:
+			direction = 1
 		
 		if not is_on_floor():
 			velocity.y = gravity * delta
