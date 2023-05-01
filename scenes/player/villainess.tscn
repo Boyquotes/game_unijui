@@ -372,4 +372,6 @@ libraries = {
 position = Vector2(0, 1)
 target_position = Vector2(0, 20)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]

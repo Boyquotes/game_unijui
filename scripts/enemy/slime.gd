@@ -12,6 +12,8 @@ func _physics_process(delta) -> void:
 		position.y += delta*300.00
 		rotation_degrees +=360
 		timmer_out -= delta
+		if timmer_out <= 0:
+			queue_free()
 		
 		if state == "active":
 			if $Ray_Right.is_colliding():
@@ -22,6 +24,10 @@ func _physics_process(delta) -> void:
 				direction = -1
 			if $Ray_Down_Right.is_colliding() == true and $Ray_Down_Left.is_colliding() == false:
 				direction = 1
+		
+		if not is_on_floor():
+			velocity.y = gravity * delta
+		
 		if direction:
 			velocity.x = direction * move_speed
 		else:
@@ -29,7 +35,7 @@ func _physics_process(delta) -> void:
 		
 		move_and_slide()
 		
-func damage():
+func damage() -> void:
 	state = "active"
 	$CollisionShape2D.disable = true
 	$anim.play("dead")
