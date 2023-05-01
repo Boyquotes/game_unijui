@@ -10,7 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta) -> void:
 	if state == "out":
 		position.y += delta*300.00
-		rotation_degrees +=360
+		rotation_degrees += delta*360
 		timmer_out -= delta
 		if timmer_out <= 0:
 			queue_free()
@@ -36,6 +36,6 @@ func _physics_process(delta) -> void:
 		move_and_slide()
 		
 func damage() -> void:
-	state = "active"
+	state = "inactive"
 	$CollisionShape2D.disable = true
 	$anim.play("dead")
