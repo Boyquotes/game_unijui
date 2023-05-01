@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://xuocfh05u57m" path="res://images/slimetest3.png" id="6_q5m30"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iuqu1"]
-radius = 120.14
+radius = 165.85
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lw3mp"]
 animations = [{
@@ -39,20 +39,21 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hk624"]
-radius = 30.0
+radius = 45.0
 
 [node name="Slime" type="CharacterBody2D" groups=["slime"]]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_u4rla")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -28)
+position = Vector2(0, -36)
 scale = Vector2(0.25, 0.25)
 shape = SubResource("CircleShape2D_iuqu1")
+metadata/_edit_lock_ = true
 
 [node name="Animated" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4, -36)
-scale = Vector2(1.45833, 1.42444)
+position = Vector2(-4, -52)
+scale = Vector2(2.06515, 2.13012)
 sprite_frames = SubResource("SpriteFrames_lw3mp")
 animation = &"stand"
 autoplay = "stand"
@@ -75,7 +76,9 @@ position = Vector2(-35, -33)
 target_position = Vector2(0, 40)
 
 [node name="Area2D" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -28)
+position = Vector2(0, -36)
 shape = SubResource("CircleShape2D_hk624")
+metadata/_edit_lock_ = true
