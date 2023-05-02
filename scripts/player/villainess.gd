@@ -75,3 +75,12 @@ func update_health(_target_position: Vector2, value: int, type: String)-> void:
 		return
 	if type == "increase":
 		health = clamp(health + value,0,max_health)
+
+
+
+func on_hitbox_area_entered(area):
+	if area.is_in_group("buraco"):
+		is_dead = true
+		sprite.action_behavior("dead")
+		get_node("../CanvasLayer2/Game_over").visible = true
+		transition_screen.fade_in()

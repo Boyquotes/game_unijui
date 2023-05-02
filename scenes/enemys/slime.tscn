@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://xuocfh05u57m" path="res://images/slimetest3.png" id="6_q5m30"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iuqu1"]
-radius = 165.85
+radius = 144.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lw3mp"]
 animations = [{
@@ -39,7 +39,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hk624"]
-radius = 45.0
+radius = 36.0
 
 [node name="Slime" type="CharacterBody2D" groups=["slime"]]
 scale = Vector2(0.25, 0.25)
