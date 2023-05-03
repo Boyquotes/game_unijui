@@ -70,19 +70,14 @@ func update_health(_target_position: Vector2, value: int, type: String)-> void:
 		health = clamp(health - value, 0, max_health)
 		
 		if health == 0:
-			is_dead = true
-			sprite.action_behavior("dead")
+			character_died()
 		return
 	if type == "increase":
 		health = clamp(health + value,0,max_health)
 
 func on_hitbox_area_entered(area):
 	if area.is_in_group("buraco"):
-		is_dead = true
-		sprite.action_behavior("dead")
-		get_node("../CanvasLayer2/Game_over").visible = true
-		transition_screen.fade_in()
-		blink_restart_label()
+		character_died()
 		
 func blink_restart_label():
 	while(true):
@@ -91,3 +86,10 @@ func blink_restart_label():
 		get_node("../CanvasLayer2/Restart").visible = false
 		await get_tree().create_timer(0.5).timeout
 		
+func character_died():
+	is_dead = true
+	sprite.action_behavior("dead")
+	get_node("../CanvasLayer2/Game_over").visible = true
+	transition_screen.fade_in()
+	blink_restart_label()
+	
