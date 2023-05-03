@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cg44dj5hv1r83"]
+[gd_scene load_steps=12 format=3 uid="uid://cg44dj5hv1r83"]
 
 [ext_resource type="PackedScene" uid="uid://cvryadbcsg71y" path="res://scenes/management/game_level.tscn" id="1_qrium"]
 [ext_resource type="PackedScene" uid="uid://dy7n70fq837tg" path="res://scenes/trap/trap.tscn" id="2_gee2g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c3leiijt46i16" path="res://scenes/enemys/slime.tscn" id="3_765kv"]
 [ext_resource type="FontFile" uid="uid://b8kafgdikpmtu" path="res://assets/monogram.ttf" id="4_08eba"]
 [ext_resource type="Script" path="res://scripts/texts/Controls.gd" id="5_s2tpq"]
+[ext_resource type="Script" path="res://scripts/management/Game_over.gd" id="7_2s6v5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d6aob"]
 font = ExtResource("4_08eba")
@@ -19,6 +20,11 @@ font_size = 64
 outline_size = 14
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_fe825"]
+font = ExtResource("4_08eba")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwv4k"]
 size = Vector2(1345, 207)
@@ -101,6 +107,22 @@ size_flags_horizontal = 4
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_e6vmr")
 uppercase = true
+script = ExtResource("7_2s6v5")
+
+[node name="Restart" type="Label" parent="CanvasLayer2" index="1"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -23.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "PRESS SPACEBAR TO RESTART"
+label_settings = SubResource("LabelSettings_fe825")
 
 [node name="Area_Hole" type="Area2D" parent="." index="8" groups=["buraco"]]
 
