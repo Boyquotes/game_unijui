@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cg44dj5hv1r83"]
+[gd_scene load_steps=15 format=3 uid="uid://cg44dj5hv1r83"]
 
 [ext_resource type="PackedScene" uid="uid://cvryadbcsg71y" path="res://scenes/management/game_level.tscn" id="1_qrium"]
 [ext_resource type="PackedScene" uid="uid://dy7n70fq837tg" path="res://scenes/trap/trap.tscn" id="2_gee2g"]
@@ -7,6 +7,9 @@
 [ext_resource type="FontFile" uid="uid://b8kafgdikpmtu" path="res://assets/monogram.ttf" id="4_08eba"]
 [ext_resource type="Script" path="res://scripts/texts/Controls.gd" id="5_s2tpq"]
 [ext_resource type="Script" path="res://scripts/management/Game_over.gd" id="7_2s6v5"]
+[ext_resource type="PackedScene" uid="uid://43b1qhv8ma4a" path="res://scenes/objects/tree_1.tscn" id="8_mdpkh"]
+[ext_resource type="PackedScene" uid="uid://dwyv3aqpoeup6" path="res://scenes/objects/tree_3.tscn" id="9_enr3w"]
+[ext_resource type="PackedScene" uid="uid://kdbfbsu37xqw" path="res://scenes/objects/tree_2.tscn" id="10_0q8nc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d6aob"]
 font = ExtResource("4_08eba")
@@ -61,7 +64,7 @@ position = Vector2(600, 294)
 position = Vector2(586, 294)
 
 [node name="Villainess" parent="." index="4" instance=ExtResource("2_lovep")]
-position = Vector2(343, 286)
+position = Vector2(343, 285)
 metadata/_edit_lock_ = true
 
 [node name="Slime" parent="." index="5" instance=ExtResource("3_765kv")]
@@ -130,8 +133,31 @@ label_settings = SubResource("LabelSettings_fe825")
 position = Vector2(1349.5, 467.5)
 shape = SubResource("RectangleShape2D_jwv4k")
 
-[node name="Objects" type="Node2D" parent="." index="9"]
+[node name="Decoration" type="Node2D" parent="." index="9"]
+z_index = -1
+position = Vector2(426, 250)
 
-[node name="Sprite2D" type="Sprite2D" parent="Objects" index="0"]
+[node name="Tree_1" parent="Decoration" index="0" instance=ExtResource("8_mdpkh")]
+position = Vector2(-12, 2)
+
+[node name="tree_3" parent="Decoration" index="1" instance=ExtResource("9_enr3w")]
+position = Vector2(77, -46)
+
+[node name="Tree_2" parent="Decoration" index="2" instance=ExtResource("8_mdpkh")]
+position = Vector2(172, 1)
+
+[node name="tree_2" parent="Decoration" index="3" instance=ExtResource("10_0q8nc")]
+z_index = 1
+position = Vector2(239, -14)
+
+[node name="tree_4" parent="Decoration" index="4" instance=ExtResource("10_0q8nc")]
+position = Vector2(522, -13)
+
+[node name="tree_5" parent="Decoration" index="5" instance=ExtResource("9_enr3w")]
+z_index = 1
+position = Vector2(444, -11)
+
+[node name="Tree_3" parent="Decoration" index="6" instance=ExtResource("8_mdpkh")]
+position = Vector2(367, 2)
 
 [connection signal="area_entered" from="Area_Hole" to="Villainess" method="_on_area_hole_area_entered"]

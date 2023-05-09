@@ -4,9 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cgyfpcg8po0g7" path="res://images/t2.png" id="2_atp3c"]
 
 [node name="Tree_1" instance=ExtResource("1_82tat")]
-metadata/_edit_lock_ = true
 
 [node name="Texture" parent="." index="0"]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_atp3c")
-metadata/_edit_lock_ = true
