@@ -8,7 +8,7 @@ var timmer_out: float = 2.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta) -> void:
-	if state == "out":
+	if state == "inactive":
 		position.y += delta*300.00
 		rotation_degrees += delta*360
 		timmer_out -= delta
@@ -39,3 +39,7 @@ func damage() -> void:
 	state = "inactive"
 	$Collision.disabled = true
 	$Animated.play("dead")
+
+
+func on_hit_box_body_entered(_body):
+	pass

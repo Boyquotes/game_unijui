@@ -36,7 +36,7 @@ func horizontal_move_behavior(direction: float) -> void:
 		return
 	animation.play("idle")
 
-func on_animation_player_finished(_anim_name: String):
+func on_animation_player_finished(_anim_name: String) -> void:
 	on_action = false
 	if _anim_name == "hit":
 		villainess.on_knockback = false

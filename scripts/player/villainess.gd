@@ -13,6 +13,7 @@ var knockback_direction: Vector2
 @export var jump_speed: float = -256.00
 @export var gravity_speed: float = 512.00
 @export var health: float = 25.0
+@export var damage: int
 
 func _ready() -> void:
 	max_health = health
@@ -94,8 +95,6 @@ func character_died():
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("buraco"):
 		character_died()
-		
-func on_hitbox_body_entered(body):
-	if body.is_in_group("inimigo"):
-		get_node("../CanvasLayer2/Game_over").visible=true
-		get_tree().paused=true		
+
+func on_hitbox_body_entered(_body):
+	pass

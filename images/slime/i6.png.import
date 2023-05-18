@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xuocfh05u57m"
-path="res://.godot/imported/slimetest3.png-b757de0034cc23c4da15a267adbf0e2e.ctex"
+uid="uid://lr3747id7q7h"
+path="res://.godot/imported/i6.png-a2f2bacf0226cee734a7269dc5b9996b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/slimetest3.png"
-dest_files=["res://.godot/imported/slimetest3.png-b757de0034cc23c4da15a267adbf0e2e.ctex"]
+source_file="res://images/slime/i6.png"
+dest_files=["res://.godot/imported/i6.png-a2f2bacf0226cee734a7269dc5b9996b.ctex"]
 
 [params]
 
