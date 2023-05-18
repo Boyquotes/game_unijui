@@ -37,5 +37,5 @@ func _physics_process(delta) -> void:
 		
 func damage() -> void:
 	state = "inactive"
-	$CollisionShape2D.disable = true
-	$anim.play("dead")
+	$Collision.disabled = true
+	$Animated.play("dead")

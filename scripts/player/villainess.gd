@@ -32,7 +32,7 @@ func _physics_process(delta) -> void:
 	if $Ray_Jump.is_colliding():
 		var obj = $Ray_Jump.get_collider()
 		if obj.is_in_group("enemy"):
-			obj.damege()
+			obj.damage()
 			velocity.y = jump_speed
 
 func knockback_move():
@@ -75,9 +75,7 @@ func update_health(_target_position: Vector2, value: int, type: String)-> void:
 	if type == "increase":
 		health = clamp(health + value,0,max_health)
 
-func on_hitbox_area_entered(area):
-	if area.is_in_group("buraco"):
-		character_died()
+
 		
 func blink_restart_label():
 	while(true):
@@ -93,3 +91,11 @@ func character_died():
 	transition_screen.fade_in()
 	blink_restart_label()
 	
+func _on_hitbox_area_entered(area):
+	if area.is_in_group("buraco"):
+		character_died()
+		
+func on_hitbox_body_entered(body):
+	if body.is_in_group("inimigo"):
+		get_node("../CanvasLayer2/Game_over").visible=true
+		get_tree().paused=true		

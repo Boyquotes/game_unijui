@@ -7,5 +7,4 @@ extends ParallaxBackground
 @export var move_speed: float
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("walk_left") or Input.is_action_pressed("walk_right"):
-		parallax_layer.motion_offset += direction * delta * move_speed
+	parallax_layer.motion_offset += direction * delta * move_speed

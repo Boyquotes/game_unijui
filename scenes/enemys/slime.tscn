@@ -41,7 +41,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hk624"]
 radius = 36.0
 
-[node name="Slime" type="CharacterBody2D" groups=["slime"]]
+[node name="Slime" type="CharacterBody2D" groups=["enemy", "slime"]]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_u4rla")
 
@@ -55,7 +55,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-4, -52)
 scale = Vector2(2.06515, 2.13012)
 sprite_frames = SubResource("SpriteFrames_lw3mp")
-animation = &"stand"
+animation = &"dead"
 autoplay = "stand"
 metadata/_edit_lock_ = true
 

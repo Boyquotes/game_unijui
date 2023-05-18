@@ -36,10 +36,13 @@ func horizontal_move_behavior(direction: float) -> void:
 		return
 	animation.play("idle")
 
-func on_animation_finished(anim_name):
+
+
+
+func on_animation_animation_finished(_anim_name: String):
 	on_action = false
-	if anim_name == "hit":
+	if _anim_name == "hit":
 		villainess.on_knockback = false
-	if anim_name == "dead":
+	if _anim_name == "dead":
 		hide()
 		transition_screen.fade_in()
