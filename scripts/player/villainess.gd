@@ -96,5 +96,6 @@ func _on_hitbox_area_entered(area):
 	if area.is_in_group("buraco"):
 		character_died()
 
-func on_hitbox_body_entered(_body):
-	pass
+func on_hitbox_body_entered(body):
+	if body.is_in_group("enemy"):
+		self.update_health(body.global_position, 10, "decrease")

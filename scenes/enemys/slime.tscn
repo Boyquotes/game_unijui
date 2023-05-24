@@ -52,6 +52,7 @@ animations = [{
 radius = 40.1995
 
 [node name="Slime" type="CharacterBody2D" groups=["enemy", "slime"]]
+z_index = 21
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_u4rla")
 
