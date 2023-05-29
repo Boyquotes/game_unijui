@@ -30,6 +30,7 @@ size = Vector2(1483, 207)
 size = Vector2(333, 305)
 
 [node name="level_0" instance=ExtResource("1_qrium")]
+position = Vector2(3, 77)
 script = null
 
 [node name="BaseTerrain" parent="Terrain" index="0"]
@@ -228,5 +229,5 @@ shape = SubResource("RectangleShape2D_wi500")
 metadata/_edit_lock_ = true
 
 [node name="Collision2" type="CollisionShape2D" parent="Wall/Barrier" index="1"]
-position = Vector2(1809, 154)
+position = Vector2(1812, 231)
 shape = SubResource("RectangleShape2D_wi500")

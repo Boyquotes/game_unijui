@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4fvsdyvpjcco"]
 
 [ext_resource type="Script" path="res://scripts/env/background.gd" id="1_5rbks"]
-[ext_resource type="Texture2D" uid="uid://bltp82dxfus8p" path="res://assets/Background/Green.png" id="2_dlr2x"]
+[ext_resource type="Texture2D" uid="uid://ca2bdqsn5s576" path="res://images/background/background02.jpg" id="2_poej7"]
 
 [node name="Background" type="ParallaxBackground"]
 script = ExtResource("1_5rbks")
@@ -14,4 +14,5 @@ motion_mirroring = Vector2(1152, 648)
 [node name="BackgroundLayer" type="TextureRect" parent="ParallaxLayer"]
 offset_right = 1154.0
 offset_bottom = 648.0
-texture = ExtResource("2_dlr2x")
+texture = ExtResource("2_poej7")
+expand_mode = 5
