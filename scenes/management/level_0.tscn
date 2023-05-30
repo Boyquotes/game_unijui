@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cg44dj5hv1r83"]
+[gd_scene load_steps=16 format=3 uid="uid://cg44dj5hv1r83"]
 
 [ext_resource type="PackedScene" uid="uid://cvryadbcsg71y" path="res://scenes/management/game_level.tscn" id="1_qrium"]
 [ext_resource type="PackedScene" uid="uid://dy7n70fq837tg" path="res://scenes/trap/trap.tscn" id="2_gee2g"]
-[ext_resource type="PackedScene" uid="uid://c4wya75xxvkjg" path="res://scenes/player/villainess.tscn" id="2_lovep"]
 [ext_resource type="PackedScene" uid="uid://c3leiijt46i16" path="res://scenes/enemys/slime.tscn" id="3_765kv"]
 [ext_resource type="FontFile" uid="uid://b8kafgdikpmtu" path="res://assets/monogram.ttf" id="4_08eba"]
 [ext_resource type="Texture2D" uid="uid://xep7lemptr85" path="res://images/arvores/t1.png" id="5_0qfdr"]
@@ -10,6 +9,11 @@
 [ext_resource type="Script" path="res://scripts/management/Game_over.gd" id="7_2s6v5"]
 [ext_resource type="Texture2D" uid="uid://x7ip5sxjj6gs" path="res://images/arvores/t4.png" id="7_foax3"]
 [ext_resource type="Texture2D" uid="uid://cj8ch3m1oovqr" path="res://images/arvores/t3.png" id="8_k0xoq"]
+[ext_resource type="PackedScene" uid="uid://bxesarhe7rtwb" path="res://scenes/player/villainess_lvl_0.tscn" id="10_ecbd5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wu867"]
+radius = 14.0
+height = 44.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_e6vmr"]
 font = ExtResource("4_08eba")
@@ -32,6 +36,13 @@ size = Vector2(333, 305)
 [node name="level_0" instance=ExtResource("1_qrium")]
 position = Vector2(3, 77)
 script = null
+
+[node name="Portal" type="Area2D" parent="." index="0" groups=["portal"]]
+position = Vector2(-3, -77)
+
+[node name="Collision" type="CollisionShape2D" parent="Portal" index="0"]
+position = Vector2(1632, 356)
+shape = SubResource("CapsuleShape2D_wu867")
 
 [node name="BaseTerrain" parent="Terrain" index="0"]
 z_index = 20
@@ -67,10 +78,6 @@ position = Vector2(1314, 303)
 
 [node name="Slime2" parent="Enemys" index="1" instance=ExtResource("3_765kv")]
 position = Vector2(1453, 303)
-
-[node name="Villainess" parent="." index="4" instance=ExtResource("2_lovep")]
-position = Vector2(343, 285)
-metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
 
@@ -157,7 +164,7 @@ texture = ExtResource("6_ggx62")
 
 [node name="T9" type="Sprite2D" parent="Decoration" index="8"]
 z_index = -1
-position = Vector2(156, -17)
+position = Vector2(156, -16)
 texture = ExtResource("7_foax3")
 
 [node name="T10" type="Sprite2D" parent="Decoration" index="9"]
@@ -173,6 +180,7 @@ texture = ExtResource("7_foax3")
 [node name="T12" type="Sprite2D" parent="Decoration" index="11"]
 position = Vector2(1222, -13)
 texture = ExtResource("7_foax3")
+metadata/_edit_lock_ = true
 
 [node name="T13" type="Sprite2D" parent="Decoration" index="12"]
 position = Vector2(1289, -15)
@@ -216,6 +224,7 @@ texture = ExtResource("5_0qfdr")
 z_index = 1
 position = Vector2(1197, -15)
 texture = ExtResource("6_ggx62")
+metadata/_edit_lock_ = true
 
 [node name="Wall" type="Node2D" parent="." index="9"]
 metadata/_edit_lock_ = true
@@ -231,3 +240,7 @@ metadata/_edit_lock_ = true
 [node name="Collision2" type="CollisionShape2D" parent="Wall/Barrier" index="1"]
 position = Vector2(1812, 231)
 shape = SubResource("RectangleShape2D_wi500")
+metadata/_edit_lock_ = true
+
+[node name="Villainess_lvl0" parent="." index="10" instance=ExtResource("10_ecbd5")]
+position = Vector2(342, 286)
