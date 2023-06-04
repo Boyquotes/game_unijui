@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://jpkv85n7xgsr"]
+[gd_scene load_steps=8 format=3 uid="uid://jpkv85n7xgsr"]
 
 [ext_resource type="PackedScene" uid="uid://c4wya75xxvkjg" path="res://scenes/player/villainess.tscn" id="1_n4qk7"]
 [ext_resource type="Script" path="res://scripts/player/villainess_lvl_0.gd" id="2_4oae5"]
 [ext_resource type="FontFile" uid="uid://b8kafgdikpmtu" path="res://assets/monogram.ttf" id="2_b5p14"]
 [ext_resource type="Script" path="res://scripts/texts/Controls.gd" id="3_t1r7g"]
+[ext_resource type="Texture2D" uid="uid://cp2ee4mulyheo" path="res://images/mana/mana0.png" id="5_oyk7c"]
+[ext_resource type="Texture2D" uid="uid://ttw2l7mscm2l" path="res://images/vida/vida5.png" id="6_j3k4t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s78dr"]
 font = ExtResource("2_b5p14")
@@ -32,3 +34,15 @@ A         D
 label_settings = SubResource("LabelSettings_s78dr")
 script = ExtResource("3_t1r7g")
 metadata/_edit_use_anchors_ = true
+
+[node name="Mana0" type="Sprite2D" parent="Interface" index="7"]
+z_index = 1001
+position = Vector2(536, 24)
+scale = Vector2(0.159091, 0.213636)
+texture = ExtResource("5_oyk7c")
+
+[node name="Vida5" type="Sprite2D" parent="Interface" index="8"]
+z_index = 1001
+position = Vector2(560, 24)
+scale = Vector2(0.195454, 0.195455)
+texture = ExtResource("6_j3k4t")

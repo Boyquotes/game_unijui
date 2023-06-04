@@ -85,6 +85,7 @@ func blink_restart_label():
 		get_node("../CanvasLayer2/Restart").visible = false
 		await get_tree().create_timer(0.5).timeout
 		
+		
 func character_died():
 	is_dead = true
 	sprite.action_behavior("dead")

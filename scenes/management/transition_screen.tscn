@@ -9,6 +9,9 @@ signal start_level
 
 var target_path: String
 
+var current_health: int = 0 
+
+
 func fade_in() -> void:
 	animation.play(\"fade_in\")
 
@@ -17,6 +20,9 @@ func on_animation_player_finished(anim_name: String):
 		animation.play(\"fade_out\")
 	if anim_name == \"fade_out\":
 		var _start: bool = emit_signal(\"start_level\")
+
+func reset() -> void:
+	current_health = 0
 "
 
 [sub_resource type="Animation" id="Animation_p7a6r"]
