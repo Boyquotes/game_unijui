@@ -33,6 +33,7 @@ func vertical_move_behavior(direction: float)-> void:
 func horizontal_move_behavior(direction: float) -> void:
 	if direction != 0: 
 		animation.play("run")
+		
 		return
 	animation.play("idle")
 

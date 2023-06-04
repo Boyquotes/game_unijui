@@ -44,6 +44,10 @@ func knockback_move():
 func move() -> void:
 	var direction: float = get_direction()
 	velocity.x = direction * move_speed
+	if(direction != 0 && $Footsteps_timer.time_left <= 0 && is_on_floor()):
+		$Footsteps.pitch_scale = 1
+		$Footsteps.play()
+		$Footsteps_timer.start(0.3)
 
 func get_direction() -> float:
 	return(
@@ -67,6 +71,7 @@ func update_health(_target_position: Vector2, value: int, type: String)-> void:
 	if type == "decrease":
 		knockback_direction = (global_position - _target_position).normalized()
 		sprite.action_behavior("hit")
+		$Hit.play()
 		on_knockback = true
 		health = clamp(health - value, 0, max_health)
 		
@@ -87,7 +92,10 @@ func blink_restart_label():
 		
 func character_died():
 	is_dead = true
+	$Hit.play()
 	sprite.action_behavior("dead")
+	await get_tree().create_timer(0.5).timeout
+	$Dead.play()
 	get_node("../CanvasLayer2/Game_over").visible = true
 	transition_screen.fade_in()
 	blink_restart_label()
